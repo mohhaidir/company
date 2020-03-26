@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <%- include('partials/navbar')%>
+</head>
+
+<body>
+  <h1>Closed Features</h1>
+  <table border="1">
+    <tr>
+      <th>Feature Name</th>
+      <th>Scope</th>
+      <th>Link Code</th>
+      <th>Feature Code</th>
+      <th>Is Reviewed</th>
+      <th>Is Merged</th>
+      <th>Action</th>
+    </tr>
+    <% for(let i = 0; i < data.length; i++) {%>
+    <tr>
+      <td><%=data[i].name%></td>
+      <td><%=data[i].scope%></td>
+      <td><%=data[i].link_to_code%></td>
+      <td><%=data[i].feature_code%></td>
+      <td><%=data[i].is_reviewed%></td>
+      <td><%=data[i].is_merged%></td>
+      <td>
+        <a href="/features/<%=data[i].id%>/remove"><button>Remove</button></a>
+      </td>
+    </tr>
+    <%}%>
+    </table>
+</body>
+</html>

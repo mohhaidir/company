@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <%- include('partials/navbar')%>
+</head>
+
+<body>
+  <div style="text-align: center">
+    <table class="table" style="text-align: center" border=1>
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">Name</th>
+          <th scope="col">Scope</th>
+          <th scope="col">Code Link</th>
+          <th scope="col">Feature Code</th>
+          <th scope="col">Revieved</th>
+          <th scope="col">Merged</th>
+          <th scope="col">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% for(let i = 0; i < result.length; i++) { %>
+        <tr>
+          <td><%= result[i].id %></td>
+          <td><%= result[i].name %></td>
+          <td><%= result[i].scope %></td>
+          <td><%= result[i].link_to_code %></td>
+          <td><%= result[i].feature_code %></td>
+          <td><%= result[i].is_reviewed %></td>
+          <td><%= result[i].is_merged %></td>
+          <td>
+            <a href="/features/<%= result[i].id %>/approve">Approve</a> | <a
+              href="/features/<%= result[i].id %>/reject">Reject</a>
+          </td>
+        </tr>
+        <% } %>
+      </tbody>
+    </table>
+  </div>
+</body>
+
+</html>

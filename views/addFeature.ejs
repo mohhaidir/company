@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <%- include('partials/navbar')%>
+
+</head>
+
+<body>
+  <div style="text-align: center">
+    <form action="/features/add" method="post">
+      <label>Name:</label><br>
+      <input type="text" name="name"><br>
+
+      <label>Scope:</label><br>
+      <select name="scope">
+        <option value="">--- select one ---</option>
+        <option>FE</option>
+        <option>BE</option>
+        <option>INFRA</option>
+      </select><br>
+
+      <label>Link To Code:</label><br>
+      <input type="text" name="link_to_code"><br>
+
+      <label>Users:</label><br>
+      <select name="userId">
+        <option value="">--- select user ---</option>
+        <% for(let i = 0; i < dataUsers.length; i++) {%>
+        <option value="<%=dataUsers[i].id%>"><%=dataUsers[i].name%></option>
+        <%}%>
+      </select><br>
+      <button type="submit">add feature</button>
+    </form>
+  </div>
+</body>
+
+</html>

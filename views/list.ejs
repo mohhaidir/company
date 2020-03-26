@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <%- include('partials/navbar')%>
+</head>
+
+<body>
+  <div class="container" style="text-align: center; font-size: 25px; margin-top: 100px">
+    <form action="">
+      <table class="table" style="text-align: center; margin: auto">
+        <thead class="thead-dark">
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Position</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% users.forEach(el => {%>
+          <tr>
+            <td><%=el.id%></td>
+            <td><%=el.name%></td>
+            <td><%=el.position%></td>
+            <td>
+              <a href="/features/list/<%= el.id%>">See</a>
+            </td>
+          </tr>
+          <%})%>
+        </tbody>
+      </table>
+    </form>
+  </div>
+</body>
+
+</html>
